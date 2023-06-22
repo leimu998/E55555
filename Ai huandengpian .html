@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>动漫幻灯片</title>
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .slideshow-container .slide {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="https://img1.imgtp.com/2023/06/23/KfNa15Ok.png" alt="幻灯片1">
+        </div>
+        <div class="slide">
+            <img src="https://img1.imgtp.com/2023/06/23/SxmfpgcC.png" alt="幻灯片2">
+        </div>
+        <div class="slide">
+            <img src="https://img1.imgtp.com/2023/06/23/pYvG5vyg.png" alt="幻灯片3">
+        </div>
+        <!-- 添加更多幻灯片 -->
+    </div>
+
+    <script>
+        var slides = document.querySelectorAll('.slide');
+        var currentSlide = 0;
+        var slideInterval = setInterval(nextSlide, 3000); // 切换间隔时间（单位：毫秒）
+
+        function nextSlide() {
+            slides[currentSlide].style.display = 'none';
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].style.display = 'block';
+        }
+    </script>
+</body>
+</html>
