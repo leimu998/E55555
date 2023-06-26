@@ -1,0 +1,73 @@
+@charset "UTF-8";
+@import url(swiper3.07.min.css);
+body{margin:0;-webkit-font-smoothing: antialiased;}
+a:active,a:hover{outline:0}
+button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0;outline:none;}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;outline:none;}
+table{border-collapse:collapse;border-spacing:0}
+td,th{padding:0}
+img{vertical-align:middle;border:0}
+@-ms-viewport{width:device-width}
+html{font-size:50px;-webkit-tap-highlight-color:transparent;height:100%;min-width:320px;overflow-x:hidden}
+body{font-family:"Microsoft YaHei";font-size:.28em;line-height:1;color:#333;background-color:white;}
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-weight:500;line-height:1.1}
+.h1 .small,.h1 small,.h2 .small,.h2 small,.h3 .small,.h3 small,.h4 .small,.h4 small,.h5 .small,.h5 small,.h6 .small,.h6 small,h1 .small,h1 small,h2 .small,h2 small,h3 .small,h3 small,h4 .small,h4 small,h5 .small,h5 small,h6 .small,h6 small{font-weight:400;line-height:1}
+.h1,.h2,.h3,h1,h2,h3{margin-top:.28rem;margin-bottom:.14rem}
+.h1 .small,.h1 small,.h2 .small,.h2 small,.h3 .small,.h3 small,h1 .small,h1 small,h2 .small,h2 small,h3 .small,h3 small{font-size:65%}
+.h4,.h5,.h6,h4,h5,h6{margin-top:.14rem;margin-bottom:.14rem}
+.h4 .small,.h4 small,.h5 .small,.h5 small,.h6 .small,.h6 small,h4 .small,h4 small,h5 .small,h5 small,h6 .small,h6 small{font-size:75%}
+.h1,h1{font-size:.364rem}
+.h2,h2{font-size:.206rem}
+.h3,h3{font-size:.238rem}
+.h4,h4{font-size:.175rem}
+.h5,h5{font-size:.14rem}
+.h6,h6{font-size:.119rem}
+h6{margin-top:0;margin-bottom:0}
+button,input,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}
+a{color:#6c6c6c;text-decoration:none;outline:0}
+a:hover{color:#ff4400;}
+a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}
+a.react,label.react{display:block;color:inherit;height:100%}
+a.react.react-active,a.react:active,label.react:active{background:rgba(0,0,0,.1)}
+ul{margin:0;padding:0;list-style-type:none}
+hr{margin-top:.28rem;margin-bottom:.28rem;border:0;border-top:1px solid #DDD8CE}
+h6,p{line-height:1.41;text-align:justify;margin:-.2em 0;word-break:break-all}
+small,weak{color:#666}
+::-webkit-input-placeholder {color:#09;line-height: inherit;} 
+:-moz-placeholder {color:#09;line-height:inherit;} 
+::-moz-placeholder {color:#09;line-height:inherit;}
+@font-face {
+    font-family:'151219regular';
+    src: url('font/151219-webfont.eot');
+    src: url('../fonts/151219-webfont.eot') format('embedded-opentype'),
+         url('../fonts/151219-webfont.woff2') format('woff2'),
+         url('../fonts/151219-webfont.woff') format('woff'),
+         url('../fonts/151219-webfont.ttf') format('truetype'),
+         url('../fonts/151219-webfont.svg#151219regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*other public*/
+.ellipsis{text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.center{text-align:center;}
+.fl{float:left;}
+.fr{float:right;}
+.obviousText{color:#ff4400;}
+.wrap{width:1200px;height:auto;margin:0 auto;}
+.cartIcon:before{font-family:'151219regular';content:"$";}
+.favorIcon:before{font-family:'151219regular';content:"*";}
+.srvIcon:before{font-family:'151219regular';content:"#";}
+.rmb_icon:before{content:"￥";margin-right:2px;}
+.link_btn{border:1px #ccc solid;border-radius:2px;background:#fafafa;color:grey;padding:8px 15px;display:inline-block;cursor:pointer;}
+.link_btn:hover{background:#f2f2f2;border:1px #fafafa solid;}
+.link_btn:active{background:#f8f8f8;border:1px #fafafa solid;}
+.textbox{border:1px #d2d2d2 solid;height:26px;line-height:26px;padding:5px;font-size:12px; vertical-align:middle;}
+.textbox_295{width:295px;}
+.textbox_225{width:225px;}
+.textarea{display:inline-block;margin-top:5px;outline:none;resize:none;border:1px #d2d2d2 solid;padding:8px;}
+.select{padding:0 5px;height:38px;font-size:12px;border:1px #d2d2d2 solid;vertical-align:middle; appearance: button;-webkit-appearance:button;}
+.group_btn{border:1px #ccc solid;background:#fafafa;color:grey;padding:0 15px;height:38px;cursor:pointer;display:inline-block;vertical-align:middle;}
+.group_btn:hover{background:#f2f2f2;border:1px #ccc solid;}
+.group_btn:active{background:#f8f8f8;border:1px #ccc solid;}
+/*header*/
+header{position:relative;}
