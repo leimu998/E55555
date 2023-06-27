@@ -1,0 +1,125 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+:root {
+  font-size: 16px;
+}
+#mark {
+  user-select: none;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 0.125rem 1.125rem 0 rgba(0, 0, 0, 0.2), 0 0 0 0.5rem #fff;
+}
+#mark .container {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fafafa;
+  z-index: 0;
+}
+#mark .container .container-background {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #dd9a9d;
+}
+#mark .container .container-foreground {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 50%;
+  background-color: #b81727;
+  box-shadow: 0 -0.125rem 0.75rem 0 rgba(0, 0, 0, 0.5);
+}
+#mark .tip {
+  box-sizing: border-box;
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  right: 0;
+  top: 0;
+  transform: translate(55%, -30%);
+  color: #fff;
+  text-align: center;
+}
+#mark .tip .tip-background {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fafafa;
+  scale: 1.1;
+}
+#mark .tip .tip-background::before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: #fafafa;
+  left: 0;
+  top: 50%;
+  transform-origin: center center;
+  transform: translate(calc(-50% + 5%), -50%) scaleY(0.75) rotate(45deg);
+}
+#mark .tip .tip-foreground {
+  box-sizing: border-box;
+  z-index: 12;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #503537;
+}
+#mark .tip .tip-foreground::before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  background-color: #503537;
+  left: 0;
+  top: 50%;
+  transform-origin: center center;
+  transform: translate(calc(-50% + 15%), -50%) scaleY(0.75) rotate(45deg);
+}
+#mark .tip .tip-top {
+  margin-top: 1.5rem;
+  font-size: 2.25rem;
+}
+#mark .tip .tip-value {
+  margin-top: 0.5rem;
+  font-size: 2.5rem;
+}
+#mark .mark-text {
+  color: #1c1c1c;
+  text-align: center;
+  font-size: 3.5rem;
+  margin: 0;
+  margin-top: 1rem;
+}
