@@ -1,0 +1,81 @@
+		private void axMapControl1_OnMapReplaced(object sender, IMapControlEvents2_OnMapReplacedEvent e)
+        {
+            IMap pMap;
+            pMap = axMapControl1.Map;
+            for (int i = 0; i < pMap.LayerCount; i++)
+            {
+                axMapControl2.Map.AddLayer(pMap.get_Layer(i));
+            }
+            axMapControl2.Extent = axMapControl2.FullExtent;
+        }
+
+        private void axMapControl2_OnMouseDown(object sender, IMapControlEvents2_OnMouseDownEvent e)
+        {
+            if (e.button == 1)
+            {
+                //探测鼠标左键
+                IPoint pPt = new PointClass();
+                pPt.X = e.mapX;
+                pPt.Y = e.mapY;
+                IEnvelope pEnvelope = axMapControl1.Extent as IEnvelope; pEnvelope.CenterAt(pPt);
+                axMapControl1.Extent = pEnvelope;
+                axMapControl1.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
+            }
+            else if (e.button == 2)
+            {
+                //鼠标右键按下
+                IEnvelope pEnvelope = axMapControl2.TrackRectangle();
+                axMapControl1.Extent = pEnvelope;
+                axMapControl1.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
+            }
+        }
+
+        private void axMapControl2_OnMouseMove(object sender, IMapControlEvents2_OnMouseMoveEvent e)
+        {
+            if (e.button != 1)
+            {
+                return;
+            }
+            IPoint pPt = new PointClass();
+            pPt.X = e.mapX;
+            pPt.Y = e.mapY;
+            axMapControl1.CenterAt(pPt);
+            axMapControl2.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGraphics, null, null);
+        }
+
+        private void axMapControl1_OnExtentUpdated(object sender, IMapControlEvents2_OnExtentUpdatedEvent e)
+        {
+            //绘制鹰眼图中红色矩形框的代码
+            IGraphicsContainer pGraphicsContainer = axMapControl2.Map as IGraphicsContainer;
+            //以mapControl2为图形容器
+            IActiveView pAv = pGraphicsContainer as IActiveView;
+            //在绘制前，清除axMapControl2中的任何图形元素
+            pGraphicsContainer.DeleteAllElements();
+            IRectangleElement pRecElement = new RectangleElementClass();
+            IElement pEle = pRecElement as IElement;
+            IEnvelope pEnv;
+            pEnv = e.newEnvelope as IEnvelope;
+	        pEle.Geometry = pEnv;
+            //设置颜色
+            IRgbColor pColor = new RgbColorClass();
+            pColor.Red = 200;
+            pColor.Green = 0;
+            pColor.Blue = 0;
+            pColor.Transparency = 255;
+            //产生一个线符号对象
+            ILineSymbol pLineSymbol = new SimpleLineSymbolClass();
+            pLineSymbol.Width = 2;
+            pLineSymbol.Color = pColor;
+            //设置填充符号的属性
+            IFillSymbol pFillSymbol = new SimpleFillSymbolClass();
+            //设置透明颜色
+            pColor.Transparency = 0;
+            pFillSymbol.Color = pColor;
+            pFillSymbol.Outline = pLineSymbol;
+            IFillShapeElement pFillShapeElement = pRecElement as IFillShapeElement;
+            pFillShapeElement.Symbol = pFillSymbol;
+            pGraphicsContainer.AddElement(pEle,0);
+            axMapControl2.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGraphics, null,null);
+        }
+    }
+}
