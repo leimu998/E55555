@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>JS中的变量与常量</title>
+  <link rel="stylesheet" href="my.css">
+ </head>
+ <body>
+    <h1>美丽的苹果店</h1>
+	<p>你好，<b id="name"></b>，<span id="greet"></span></p>
+    <script>
+	let i1 = document.getElementById('name');
+	let name = prompt("请问你叫什么名字?");
+	i1.innerHTML= name;
+    const greet = "欢迎光临我的小店！";
+    let span1 = document.getElementById('greet');
+	span1.innerHTML= greet;
+</script>
+</body>
+</html>
