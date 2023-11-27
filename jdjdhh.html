@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>JS中的运算符-购物车</title>
+  <link rel="stylesheet" href="my.css">
+ </head>
+ <body>
+    <h1>购物车</h1>
+	<ol>
+	  <li>食盐，<span id="salt">2</span>个，单价：￥<span id="saltPrice">2.5</span>元</li>
+	  <li>奥妙洗衣液，<span id="laundryLi">1</span>个，单价：￥<span id="laundryPrice">19.9</span>元</li>
+	  <li>潘婷洗发水，<span id="shampoo">3</span>个，单价：￥<span id="shampooPrice">27</span>元</li>
+	</ol>
+	<p>您好，您一共购买了<b id="quant"></b>件商品，总价为<b id="totalPrice"></b>元</p>
+    <script>
+	  const sPrice = Number(document.getElementById('saltPrice').innerHTML);
+	  const lPrice = Number(document.getElementById('laundryPrice').innerHTML);
+	  const shPrice = Number(document.getElementById('shampooPrice').innerHTML);
+	  let sQuant = Number(document.getElementById('salt').innerHTML);
+	  let lQuant = Number(document.getElementById('laundryLi').innerHTML);
+	  let shQuant = Number(document.getElementById('shampoo').innerHTML);
+	   
+	 
+	  let quant = sQuant+lQuant+shQuant;
+      let toPrice = sPrice*sQuant+lPrice*lQuant+shPrice*shQuant;
+	  let toQuant = document.getElementById('quant');
+	  toQuant.innerHTML = quant;
+	  let totalPrice = document.getElementById('totalPrice');
+	  totalPrice.innerHTML = toPrice;
+	  /*
+	  let msg = "I am hungry, let\'s go to the restaurant"; 
+      console.log(msg);	
+      */	  
+    </script>
+</body>
+</html>
